@@ -9,6 +9,18 @@
 #include <stdlib.h>
 #include "tokens.h"
 
+// Immutable datatype(variable)
+typedef struct s_string {
+    int16 length;
+    int8 *cur;
+    int8 data[];
+}String;
+
+typedef unsigned char int8;
+typedef unsigned short int int16;
+typedef unsigned int int32;
+typedef unsigned long long int int64;
+
 
 
 // for typecasting
@@ -26,6 +38,7 @@ typedef struct s_tuple{
     String *s;
     int8 c;
 }Tuple;
+
 
 /* constructor function */
 String *mkstring(int8*);

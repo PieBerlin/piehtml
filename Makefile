@@ -5,7 +5,7 @@ ldflags=-L/usr/local/lib -lpieutils
 
 all: clean piehtml
 
-piehtml: piehtml.o helpers.o constructors.o 
+piehtml: piehtml.o helpers.o constructors.o tokens.o garbage.o
 	cc ${flags} $^ -o $@ ${ldflags}
 
 
@@ -16,6 +16,12 @@ helpers.o: helpers.c
 	cc ${flags} -c $<
 
 constructors.o: constructors.c 
+	cc ${flags} -c $<
+
+tokens.o: tokens.c 
+	cc ${flags} -c $<
+
+garbage.o: garbage.c 
 	cc ${flags} -c $<
 
 clean:
